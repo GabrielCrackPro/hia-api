@@ -1,6 +1,5 @@
 const shopsRouter = require("express").Router();
 const shopModel = require("../db/models/Shop");
-const { checkFunctions } = require("../db/utils");
 
 shopsRouter
   .get("/", async (_req, res) => {
@@ -33,7 +32,7 @@ shopsRouter
       schedule,
     });
     if (await shopModel.findOne({ name, description, address, type })) {
-      res.status(400).json({ status: res.status ,message: "Shop already exists" });
+      res.status(400).json({ status: res.status, message: "Shop already exists" });
     } else {
       await shop.save((err) => {
         if (err) res.status(500).json(err);
