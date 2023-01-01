@@ -13,7 +13,7 @@ const userSchema = new Schema({
     type: String,
     required: true,
   },
-  profilePicture:{
+  profilePicture: {
     type: String,
   },
   logged: {
@@ -34,8 +34,14 @@ const userSchema = new Schema({
   ],
   locations: [
     {
-      type:Object,
+      type: Object,
       ref: "Location"
+    }
+  ],
+  actions: [
+    {
+      type: Object,
+      ref: "Action"
     }
   ],
   // eslint-disable-next-line

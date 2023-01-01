@@ -12,6 +12,7 @@ const itemsRouter = require("./routers/ItemsRouter");
 const shopsRouter = require("./routers/shopsRouter");
 const locationsRouter = require("./routers/locationsRouter");
 const usersRouter = require("./routers/usersRouter");
+const actionsRouter = require("./routers/actionsRouter.js");
 
 dotenv.config();
 
@@ -30,6 +31,7 @@ app.use("/api/v1/items", itemsRouter);
 app.use("/api/v1/shops", shopsRouter);
 app.use("/api/v1/locations", locationsRouter);
 app.use("/api/v1/users", usersRouter);
+app.use("/api/v1/actions", actionsRouter);
 
 app.get("/", (_req, res) => {
   res.json({
