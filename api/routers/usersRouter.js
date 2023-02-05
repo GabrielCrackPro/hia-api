@@ -25,15 +25,15 @@ usersRouter
       username,
       displayname,
       password: hashPassword(password, 10),
-      profilePicture
+      profilePicture,
     });
     if (await userModel.findOne({ username })) {
-      res.status(400).json({ message: "User already exists" });
+      return res.status(400).json({ message: "User already exists" });
     } else {
       await user.save((err) => {
-        if (err) res.status(500).json(err);
+        if (err) return res.status(500).json(err);
       });
-      res.status(201).json({ message: "User created successfully", user });
+      return res.status(201).json({ message: "User created successfully", user });
     }
   })
   .post("/login", async (req, res) => {
@@ -79,7 +79,7 @@ usersRouter
       displayname,
       items,
       shops,
-      locations
+      locations,
     });
     // eslint-disable-next-line
     user.updated_at = new Date();
