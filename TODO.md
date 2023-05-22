@@ -16,11 +16,6 @@
 
 #### ❌ To Be Done
 
-- [ ] Implement API docs with swagger
-  - [x] Item endpoints
-  - [ ] Shop endpoints
-  - [ ] Location endpoints
-  - [ ] User endpoints
 - [ ] Extract database operations into separate functions
 - [ ] Keep old user items when new item gets created and add a new one
 - [ ] Check if user is logged before doing anything
@@ -82,12 +77,7 @@
     - items
     - logged
 - [ ] Add auth methods
-  - [ ] OAuth
   - [x] Sign Up / Login
-- [ ] Add relationships between models
-  - [x] User => Item - 0:N
-  - [ ] Item => Shop - 1:N
-  - [ ] Item => Location - 1:1
 
 ## ✅ Tests
 
@@ -98,7 +88,3 @@
 
 - [ ] Create frontend UI
 - [ ] Deploy
-
-## ⬆️ Stretch features
-
-- [ ] Change login method for [mongo-auth](https://www.npmjs.com/package/mongo-auth) library
