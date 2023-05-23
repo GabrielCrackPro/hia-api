@@ -12,13 +12,13 @@ itemsRouter
     res.status(200).json(item);
   })
   .post("/", async (req, res) => {
-    const { id, name, description, type } = req.body;
+    const { id, name, description, type, code } = req.body;
     // const validData = checkFunctions.applyRegexp([name, description]);
     // if (!validData) {
     // res.status(400).json({ message: "Data must be alphanumeric" });
     // }
-    const item = new itemModel({ id, name, description, type });
-    if (await itemModel.findOne({ name, description, type })) {
+    const item = new itemModel({ id, name, description, type, code });
+    if (await itemModel.findOne({ name, description, type, code })) {
       res.status(400).json({ staus: res.status, message: "Item already exists" });
     } else {
       await item.save((err) => {

@@ -12,6 +12,10 @@ const itemSchema = new Schema({
     type: String,
     required: true
   },
+  code: {
+    type: String,
+    required: true,
+  },
   location: {
     type: Schema.Types.ObjectId,
     ref: "Location",
