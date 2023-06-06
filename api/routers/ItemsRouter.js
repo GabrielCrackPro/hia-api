@@ -19,14 +19,20 @@ itemsRouter
     // }
     const item = new itemModel({ id, name, description, type, code });
     if (await itemModel.findOne({ name, description, type, code })) {
-      res.status(400).json({ staus: res.status, message: "Item already exists" });
+      res
+        .status(400)
+        .json({ staus: res.status, message: "Item already exists" });
     } else {
       await item.save((err) => {
         if (err) {
           res.status(500).json(err);
           return;
         }
-        res.status(201).json({ status: res.status, message: "Item created successfully", item });
+        res.status(201).json({
+          status: res.status,
+          message: "Item created successfully",
+          item,
+        });
       });
     }
   })
@@ -37,7 +43,11 @@ itemsRouter
     // if (!validData) {
     // res.status(400).json({ message: "Data must be alphanumeric" });
     // }
-    const item = await itemModel.findOneAndUpdate(id, { name, description, type });
+    const item = await itemModel.findOneAndUpdate(id, {
+      name,
+      description,
+      type,
+    });
     // eslint-disable-next-line
     item.updated_at = new Date();
     res.status(200).json({ message: "Item updated successfully", item });
