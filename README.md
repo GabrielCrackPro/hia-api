@@ -22,16 +22,24 @@ npm install
    - Create an account or log in
    - Create a new project
    - In the databases section of the project create a new shared cluster
-   - Once the cluster is created click on **Connect**
-   - Select **Drivers**
-   - Copy the connection string provided in the step 3:
+   - Once the cluster is created click **Connect**
+   - Select **Drivers** section
+   - Copy the connection string provided in step 3 (similar to this):
      > `mongodb+srv://<user>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority`
    - Change the user and password to your cluser's user and password
    - Copy the final conection string
 
 5. In the <code>.env</code> change the <code>MONGODB_URI</code> value to your conection string
-6. To start the API run:
+6. Start the API:
 
-```bash
-npm start
-```
+   - In normal mode:
+
+   ```bash
+   npm start
+   ```
+
+   - In development mode (refreshes automatically):
+
+   ```bash
+   npm run dev
+   ```
